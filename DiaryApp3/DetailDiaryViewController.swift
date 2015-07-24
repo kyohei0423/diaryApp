@@ -10,8 +10,8 @@ import UIKit
 
 class DetailDiaryViewController: UIViewController {
     
-    var content = ""
-    var date = ""
+    var diary: Diary?
+    
 
     @IBOutlet weak var detailTextView: UITextView!
     override func viewDidLoad() {
@@ -31,8 +31,9 @@ class DetailDiaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = date
-        detailTextView.text = content
+        
+        navigationItem.title = diary?.date
+        detailTextView.text = diary?.content
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "edit")
     }
@@ -45,7 +46,7 @@ class DetailDiaryViewController: UIViewController {
         if segue.identifier == "PresentToEditDiaryViewController" {
             let destinationViewController = segue.destinationViewController as! UINavigationController
             let editDiaryViewController = destinationViewController.topViewController as! EditDiaryViewController
-            editDiaryViewController.diaryContent = detailTextView.text
+            editDiaryViewController.diary = self.diary
         }
     }
     

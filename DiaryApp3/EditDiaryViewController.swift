@@ -9,7 +9,9 @@
 import UIKit
 
 class EditDiaryViewController: UIViewController {
-    var diaryContent = ""
+    var diary :Diary?
+    var diaries:[Diary] = []
+    var diaryStocks = DiaryStocks.sharedInstance
     
     @IBOutlet weak var editTextView: UITextView!
     
@@ -18,6 +20,7 @@ class EditDiaryViewController: UIViewController {
         editTextView.layer.cornerRadius = 8
         editTextView.layer.borderWidth = 3
         editTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,10 +35,18 @@ class EditDiaryViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save")
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        editTextView.text = diaryContent
+        editTextView.text = diary?.content
     }
     
     func close() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    func save() {
+        if count(editTextView.text) == 0 {
+        } else {
+            diary?.content = editTextView.text
+            self.diaryStocks.saveDiary()
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 }
