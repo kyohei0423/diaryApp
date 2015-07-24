@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sd6-ln-5XK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Lsit Table Table View Controller-->
+        <scene sceneID="LZx-FX-GPe">
+            <objects>
+                <tableViewController storyboardIdentifier="DiaryLsitTableTableViewController" id="2l4-5h-gKo" customClass="DiaryLsitTableTableViewController" customModule="DiaryApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="Guy-Kz-Fbb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="diaryIdentifier" rowHeight="85" id="3b5-MP-Sb8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3b5-MP-Sb8" id="7OM-n2-hh0">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日記が入ります 日記が入ります 日記が入ります" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP6-Ml-Ifs">
+                                            <rect key="frame" x="13" y="13" width="349" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="hmq-M6-syf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付が入ります" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJs-Kq-ztR">
+                                            <rect key="frame" x="13" y="58" width="349" height="13.5"/>
+                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lP6-Ml-Ifs" firstAttribute="leading" secondItem="7OM-n2-hh0" secondAttribute="leadingMargin" constant="5" id="1wC-5T-xed"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RJs-Kq-ztR" secondAttribute="bottom" constant="5" id="Eog-XP-1nl"/>
+                                        <constraint firstItem="RJs-Kq-ztR" firstAttribute="top" secondItem="lP6-Ml-Ifs" secondAttribute="bottom" constant="10" id="MN4-hx-3J9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RJs-Kq-ztR" secondAttribute="trailing" constant="5" id="bka-9z-R8O"/>
+                                        <constraint firstItem="RJs-Kq-ztR" firstAttribute="leading" secondItem="7OM-n2-hh0" secondAttribute="leadingMargin" constant="5" id="czu-Wy-9gV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lP6-Ml-Ifs" secondAttribute="trailing" constant="5" id="jkk-pp-G2y"/>
+                                        <constraint firstItem="lP6-Ml-Ifs" firstAttribute="top" secondItem="7OM-n2-hh0" secondAttribute="topMargin" constant="5" id="xuL-BV-TF9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2l4-5h-gKo" id="Lxr-01-Bmd"/>
+                            <outlet property="delegate" destination="2l4-5h-gKo" id="rgb-P4-hS4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0Kc-tu-kKV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="TQv-dr-dxM" kind="presentation" identifier="PresentNewDiaryViewController" id="c19-QZ-WIk"/>
+                        <segue destination="y4R-mZ-z2F" kind="show" identifier="showToDetailDiaryViewController" id="LDv-5u-Ylm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxd-9g-yPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942.5" y="-579.5"/>
+        </scene>
+        <!--New Diary View Controller-->
+        <scene sceneID="Ndf-B0-h23">
+            <objects>
+                <viewController id="fMP-lb-ZTO" customClass="NewDiaryViewController" customModule="DiaryApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hD0-b9-VoW"/>
+                        <viewControllerLayoutGuide type="bottom" id="4lJ-5S-yG7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EcA-ne-yfh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkv-7H-OhB">
+                                <rect key="frame" x="30" y="30" width="315" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="lDA-2j-ybe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vkv-7H-OhB" secondAttribute="trailing" constant="20" id="LbU-pf-nEl"/>
+                            <constraint firstAttribute="trailing" secondItem="vkv-7H-OhB" secondAttribute="trailing" constant="30" id="QbY-Sm-0rd"/>
+                            <constraint firstItem="vkv-7H-OhB" firstAttribute="top" secondItem="hD0-b9-VoW" secondAttribute="bottom" constant="30" id="X9b-e7-PZV"/>
+                            <constraint firstItem="vkv-7H-OhB" firstAttribute="leading" secondItem="EcA-ne-yfh" secondAttribute="leading" constant="30" id="hfq-fb-nYZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LbU-pf-nEl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="rjN-kl-qYu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="diaryTextView" destination="vkv-7H-OhB" id="yHv-8Y-vZi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5M-sn-vhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940.5" y="-909.5"/>
+        </scene>
+        <!--Detail Diary View Controller-->
+        <scene sceneID="AdZ-QL-a00">
+            <objects>
+                <viewController id="A9k-8Y-UHy" customClass="DetailDiaryViewController" customModule="DiaryApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ffr-bE-k7g"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHr-Yx-9KS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KC1-Un-DEX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZY-1i-5Bf">
+                                <rect key="frame" x="30" y="30" width="315" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="qBV-Zt-mHB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cZY-1i-5Bf" firstAttribute="top" secondItem="ffr-bE-k7g" secondAttribute="bottom" constant="30" id="FRR-Fg-tfh"/>
+                            <constraint firstItem="cZY-1i-5Bf" firstAttribute="leading" secondItem="KC1-Un-DEX" secondAttribute="leading" constant="30" id="ecF-US-pOD"/>
+                            <constraint firstAttribute="trailing" secondItem="cZY-1i-5Bf" secondAttribute="trailing" constant="30" id="nTK-4k-ho5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8ab-Jh-vu0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="detailTextView" destination="cZY-1i-5Bf" id="FeO-fx-GbV"/>
+                        <segue destination="xyJ-I2-wYj" kind="presentation" identifier="PresentToEditDiaryViewController" id="jW4-nd-hz1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gud-md-Bvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940.5" y="-90.5"/>
+        </scene>
+        <!--Edit Diary View Controller-->
+        <scene sceneID="itg-TS-ICF">
+            <objects>
+                <viewController id="PnB-Ve-yP2" customClass="EditDiaryViewController" customModule="DiaryApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QPF-b6-hyQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZI-mx-cFi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dvb-Nx-OnD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-Ez-WpN">
+                                <rect key="frame" x="30" y="94" width="315" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="bWx-2Q-ekn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hGD-Ez-WpN" secondAttribute="trailing" constant="30" id="7X6-YS-Yh3"/>
+                            <constraint firstItem="hGD-Ez-WpN" firstAttribute="leading" secondItem="Dvb-Nx-OnD" secondAttribute="leading" constant="30" id="8dz-Iw-Vga"/>
+                            <constraint firstItem="hGD-Ez-WpN" firstAttribute="top" secondItem="QPF-b6-hyQ" secondAttribute="bottom" constant="30" id="HGN-WI-51l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hS8-U0-3QE"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="editTextView" destination="hGD-Ez-WpN" id="dIF-xM-3Qj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hvc-hh-noU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2903.5" y="-90.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OGQ-ip-0jg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sd6-ln-5XK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uCd-kE-6bR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1215686351" green="0.6784313917" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2l4-5h-gKo" kind="relationship" relationship="rootViewController" id="avg-yT-XYA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEb-dw-6gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="-579"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tXM-NK-MHN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TQv-dr-dxM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ox5-WS-Pzo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1215686351" green="0.6784313917" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fMP-lb-ZTO" kind="relationship" relationship="rootViewController" id="mld-95-X0Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fe5-ub-I03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451.5" y="-909.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ADg-eS-MhO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y4R-mZ-z2F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hIU-Ha-ETv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1215686351" green="0.6784313917" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A9k-8Y-UHy" kind="relationship" relationship="rootViewController" id="zNl-kj-iw6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERc-Gj-axQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451.5" y="-90.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t5W-Vh-cpJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xyJ-I2-wYj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ORE-Ya-vvP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1215686351" green="0.6784313917" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PnB-Ve-yP2" kind="relationship" relationship="rootViewController" id="omS-L4-ylP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOp-sF-gE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420.5" y="-90.5"/>
+        </scene>
+    </scenes>
+</document>
