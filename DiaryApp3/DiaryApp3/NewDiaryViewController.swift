@@ -8,22 +8,31 @@
 
 import UIKit
 
+//========プロトコルの作成===========
+@objc protocol NewDiaryViewControllerDelegate {
+    func newDiaryViewController(didSaveDiary vc:NewDiaryViewController, diary:Diary)
+}
 
 class NewDiaryViewController: UIViewController {
+    
+//========プロトコルとクラスの関連付け=========
+    weak var delegate: NewDiaryViewControllerDelegate?
+    
 //========関連付け===========
     @IBOutlet weak var diaryTextView: UITextView!
+    @IBOutlet weak var diaryTitle: UITextField!
+    @IBOutlet weak var satisfactionSegment: UISegmentedControl!
     
 //========プロパティ==========
-    var diary: Diary!
-    
     //DiaryStocksのインスタンスを生成することで日記を保存する配列にアクセスできるようになる
-    var diaryStocks = DiaryStocks.sharedInstance
+//    var diaryStocks = DiaryStocks.sharedInstance
+    
+    var diary: Diary!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        diary = Diary()
-    
+        satisfactionSegment.selectedSegmentIndex = 2
         //TextView
         diaryTextView.layer.cornerRadius = 8
         diaryTextView.layer.borderWidth = 3
@@ -51,19 +60,19 @@ class NewDiaryViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    //保存する
     func save() {
         if count(diaryTextView.text) == 0 {
             showAlert("日記が入力されていません")
         } else {
-            //入力された値をViewControllerに渡す
-            diary.content = diaryTextView.text
-            var date = day()
-            diary.date = date
-            self.diaryStocks.addDiaryStocks(self.diary)
-            println(self.diaryStocks.myDiaries)
-//            showAlert("日記を保存しました")
+            let diaryDate = Diary()
+            diaryDate.title = diaryTitle.text
+            diaryDate.content = diaryTextView.text
+            diaryDate.satisfaction = satisfactionSegment.selectedSegmentIndex
+            let date = day()
+            diaryDate.date = date
+            DiaryStocks.saveDiary(diaryDate)
             dismissViewControllerAnimated(true, completion: nil)
+            self.delegate?.newDiaryViewController(didSaveDiary: self, diary: diaryDate)
         }
     }
     //保存に関するアラートを出す
@@ -97,8 +106,4 @@ class NewDiaryViewController: UIViewController {
     
         return saveDay
     }
-    
-//========お題を変える============
-    
-
 }

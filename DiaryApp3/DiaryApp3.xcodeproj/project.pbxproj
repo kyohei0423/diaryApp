@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		595B76C230C8FA9C29899AD7 /* Pods_DiaryApp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A599CCD1DCB2F0BF44219E /* Pods_DiaryApp3.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E21C198E1B745C1F00D75BB0 /* average.png in Resources */ = {isa = PBXBuildFile; fileRef = E21C19891B745C1F00D75BB0 /* average.png */; };
+		E21C198F1B745C1F00D75BB0 /* good.png in Resources */ = {isa = PBXBuildFile; fileRef = E21C198A1B745C1F00D75BB0 /* good.png */; };
+		E21C19901B745C1F00D75BB0 /* excellent.png in Resources */ = {isa = PBXBuildFile; fileRef = E21C198B1B745C1F00D75BB0 /* excellent.png */; };
+		E21C19911B745C1F00D75BB0 /* bad.png in Resources */ = {isa = PBXBuildFile; fileRef = E21C198C1B745C1F00D75BB0 /* bad.png */; };
+		E21C19921B745C1F00D75BB0 /* veryBad.png in Resources */ = {isa = PBXBuildFile; fileRef = E21C198D1B745C1F00D75BB0 /* veryBad.png */; };
 		E2F4429D1B4F6631008D3FAE /* DiaryLsitTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4429C1B4F6631008D3FAE /* DiaryLsitTableTableViewController.swift */; };
 		E2F442A21B4F6D74008D3FAE /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F442A11B4F6D74008D3FAE /* Diary.swift */; };
 		E2F442A41B4F6DA7008D3FAE /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F442A31B4F6DA7008D3FAE /* DiaryController.swift */; };
@@ -35,6 +40,11 @@
 /* Begin PBXFileReference section */
 		1ED93CD3176B37A9DAB738F1 /* Pods-DiaryApp3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp3.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiaryApp3/Pods-DiaryApp3.release.xcconfig"; sourceTree = "<group>"; };
 		8B3F561791B0E4754B7F3AEB /* Pods-DiaryApp3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiaryApp3/Pods-DiaryApp3.debug.xcconfig"; sourceTree = "<group>"; };
+		E21C19891B745C1F00D75BB0 /* average.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = average.png; sourceTree = "<group>"; };
+		E21C198A1B745C1F00D75BB0 /* good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = good.png; sourceTree = "<group>"; };
+		E21C198B1B745C1F00D75BB0 /* excellent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = excellent.png; sourceTree = "<group>"; };
+		E21C198C1B745C1F00D75BB0 /* bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bad.png; sourceTree = "<group>"; };
+		E21C198D1B745C1F00D75BB0 /* veryBad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryBad.png; sourceTree = "<group>"; };
 		E2F4429C1B4F6631008D3FAE /* DiaryLsitTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryLsitTableTableViewController.swift; sourceTree = "<group>"; };
 		E2F442A11B4F6D74008D3FAE /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		E2F442A31B4F6DA7008D3FAE /* DiaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
@@ -90,6 +100,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E21C19931B745C2900D75BB0 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				E21C19891B745C1F00D75BB0 /* average.png */,
+				E21C198B1B745C1F00D75BB0 /* excellent.png */,
+				E21C198C1B745C1F00D75BB0 /* bad.png */,
+				E21C198D1B745C1F00D75BB0 /* veryBad.png */,
+				E21C198A1B745C1F00D75BB0 /* good.png */,
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
 		E2F4429E1B4F6CF6008D3FAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +163,7 @@
 		E2FB986D1B4E570900A47C32 /* DiaryApp3 */ = {
 			isa = PBXGroup;
 			children = (
+				E21C19931B745C2900D75BB0 /* Pictures */,
 				E2F4429E1B4F6CF6008D3FAE /* Model */,
 				E2F4429F1B4F6D01008D3FAE /* ViewController */,
 				E2F442A01B4F6D0C008D3FAE /* View */,
@@ -261,9 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21C19901B745C1F00D75BB0 /* excellent.png in Resources */,
+				E21C198E1B745C1F00D75BB0 /* average.png in Resources */,
 				E2FB98761B4E570900A47C32 /* Main.storyboard in Resources */,
 				E2FB987B1B4E570900A47C32 /* LaunchScreen.xib in Resources */,
 				E2FB98781B4E570900A47C32 /* Images.xcassets in Resources */,
+				E21C19921B745C1F00D75BB0 /* veryBad.png in Resources */,
+				E21C198F1B745C1F00D75BB0 /* good.png in Resources */,
+				E21C19911B745C1F00D75BB0 /* bad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +444,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				New_Setting = "";
+				New_Setting1 = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -454,6 +484,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				New_Setting = "";
+				New_Setting1 = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -483,6 +515,7 @@
 		};
 		E2FB988E1B4E570900A47C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B3F561791B0E4754B7F3AEB /* Pods-DiaryApp3.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -502,6 +535,7 @@
 		};
 		E2FB988F1B4E570900A47C32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED93CD3176B37A9DAB738F1 /* Pods-DiaryApp3.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
