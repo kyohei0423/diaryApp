@@ -27,8 +27,6 @@ class DiaryLsitTableTableViewController: UITableViewController, NewDiaryViewCont
 //====================デリゲート=========================
     func newDiaryViewController(didSaveDiary vc: NewDiaryViewController, diary: Diary) {
         //保存したことを伝えるアラートを出す
-        println("===============アラート=====================")
-        println(diary.date)
         let alertView = UIAlertController(title: "日記を作成", message: "\(diary.date)の日記を作成しました", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(alertView, animated: false, completion: nil)

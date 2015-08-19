@@ -13,7 +13,7 @@ import UIKit
     func newDiaryViewController(didSaveDiary vc:NewDiaryViewController, diary:Diary)
 }
 
-class NewDiaryViewController: UIViewController {
+class NewDiaryViewController: UIViewController, UITextFieldDelegate {
     
 //========プロトコルとクラスの関連付け=========
     weak var delegate: NewDiaryViewControllerDelegate?
@@ -32,15 +32,40 @@ class NewDiaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TextField
+        diaryTitle.layer.borderWidth = 2
+        diaryTitle.layer.cornerRadius = 8
+        diaryTitle.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
+        
         satisfactionSegment.selectedSegmentIndex = 2
         //TextView
         diaryTextView.layer.cornerRadius = 8
         diaryTextView.layer.borderWidth = 3
         diaryTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
+        
+        //Gestureの追加
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        //Deligate
+        diaryTitle.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //=================Deligateで行いたい処理================
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        diaryTitle.resignFirstResponder()
+        return true
+    }
+    
+    
+    //=================タップされたときに行いたい処理===========
+    func tapGesture(UITapGestureRecognizer) {
+        diaryTitle.resignFirstResponder()
+        diaryTextView.resignFirstResponder()
     }
     
 //=============Navigationbar===============
@@ -63,7 +88,9 @@ class NewDiaryViewController: UIViewController {
     func save() {
         if count(diaryTextView.text) == 0 {
             showAlert("日記が入力されていません")
-        } else {
+        } else if count(diaryTitle.text) == 0 {
+            showAlert("タイトルが入力されていません")
+        }else {
             let diaryDate = Diary()
             diaryDate.title = diaryTitle.text
             diaryDate.content = diaryTextView.text

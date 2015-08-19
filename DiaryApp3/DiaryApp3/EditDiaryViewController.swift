@@ -13,7 +13,7 @@ import UIKit
     func editDiaryViewController(didSaveDiary vc:EditDiaryViewController, diary:Diary)
 }
 
-class EditDiaryViewController: UIViewController {
+class EditDiaryViewController: UIViewController, UITextFieldDelegate {
     //========プロトコルとクラスの関連付け=========
     weak var delegate: EditDiaryViewControllerDelegate?
     
@@ -29,15 +29,38 @@ class EditDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        editTextField.layer.borderWidth = 2
+        editTextField.layer.cornerRadius = 8
+        editTextField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
+        
         editTextView.layer.cornerRadius = 8
         editTextView.layer.borderWidth = 3
         editTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
-
+        
+        //Gestureの追加
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapGesture:")
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        //Deligate
+        editTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //=================Deligateで行いたい処理================
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        editTextField.resignFirstResponder()
+        return true
+    }
+    
+    
+    //=================タップされたときに行いたい処理===========
+    func tapGesture(UITapGestureRecognizer) {
+        editTextField.resignFirstResponder()
+        editTextView.resignFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +82,8 @@ class EditDiaryViewController: UIViewController {
     func save() {
         if count(editTextView.text) == 0 {
             showAlert("日記が入力されていません")
+        } else if count(editTextField.text) == 0 {
+            showAlert("タイトルが入力されていません")
         } else {
             diary.title = editTextField.text
             diary.content = editTextView.text

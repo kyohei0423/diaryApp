@@ -68,7 +68,7 @@ class DetailDiaryViewController: UIViewController,EditDiaryViewControllerDelegat
         //保存したことを伝えるアラートを出す
         println("===============アラート=====================")
         println(diary.date)
-        let alertView = UIAlertController(title: "日記をを編集", message: "\(diary.date)の日記を編集しました", preferredStyle: .Alert)
+        let alertView = UIAlertController(title: "日記を編集", message: "\(diary.date)の日記を編集しました", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(alertView, animated: false, completion: nil)
     }
